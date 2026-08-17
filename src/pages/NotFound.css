@@ -7,7 +7,7 @@
   font-family: "Fraunces", serif;
   font-size: 90px;
   font-weight: 700;
-  color: #c9a227;
+  color: var(--gold);
   margin: 0;
   line-height: 1;
 }
@@ -15,18 +15,18 @@
 .notfound__title {
   font-family: "Fraunces", serif;
   font-size: 28px;
-  color: #1b2a41;
+  color: var(--navy);
   margin: 10px 0;
 }
 
 .notfound__text {
-  color: #6b6558;
+  color: var(--muted);
   margin-bottom: 24px;
 }
 
 .notfound__link {
   display: inline-block;
-  background: #1b2a41;
+  background: var(--navy);
   color: #faf7f0;
   text-decoration: none;
   border-radius: 999px;
@@ -36,5 +36,5 @@
 }
 
 .notfound__link:hover {
-  background: #29405f;
+  background: var(--navy-hover);
 }

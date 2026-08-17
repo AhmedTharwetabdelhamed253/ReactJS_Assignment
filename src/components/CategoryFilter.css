@@ -7,9 +7,9 @@
 }
 
 .chip {
-  border: 1px solid #ece5d5;
-  background: #fffdf8;
-  color: #1b2a41;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-alt);
+  color: var(--navy);
   padding: 8px 18px;
   border-radius: 999px;
   font-size: 14px;
@@ -18,11 +18,11 @@
 }
 
 .chip:hover {
-  border-color: #c9a227;
+  border-color: var(--gold);
 }
 
 .chip--active {
-  background: #1b2a41;
+  background: var(--navy);
   color: #fff;
-  border-color: #1b2a41;
+  border-color: var(--navy);
 }

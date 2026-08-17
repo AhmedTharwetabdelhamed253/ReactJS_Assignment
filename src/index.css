@@ -4,9 +4,37 @@
   box-sizing: border-box;
 }
 
+/* Theme variables (Context API drives which set is active via body[data-theme]) */
+:root {
+  --bg: #faf7f0;
+  --text: #1c1c1c;
+  --surface: #ffffff;
+  --surface-alt: #fffdf8;
+  --surface-border: #ece6d8;
+  --navy: #1b2a41;
+  --navy-hover: #29405f;
+  --gold: #c9a227;
+  --muted: #6b6558;
+  --muted-soft: #a39c8c;
+}
+
+body[data-theme="dark"] {
+  --bg: #12161f;
+  --text: #f2ede0;
+  --surface: #1b2230;
+  --surface-alt: #1f2735;
+  --surface-border: #303a4f;
+  --navy: #0d1420;
+  --navy-hover: #1b2a41;
+  --gold: #e0b84a;
+  --muted: #a9a190;
+  --muted-soft: #7d7666;
+}
+
 body {
   margin: 0;
-  background: #faf7f0;
+  background: var(--bg);
   font-family: "Inter", sans-serif;
-  color: #1c1c1c;
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

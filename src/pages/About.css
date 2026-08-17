@@ -4,7 +4,7 @@
 }
 
 .about__eyebrow {
-  color: #c9a227;
+  color: var(--gold);
   font-weight: 700;
   letter-spacing: 0.12em;
   font-size: 13px;
@@ -15,14 +15,14 @@
 .about__title {
   font-family: "Fraunces", serif;
   font-size: 36px;
-  color: #1b2a41;
+  color: var(--navy);
   margin: 0 0 16px;
 }
 
 .about__lead {
   max-width: 640px;
   margin: 0 auto 40px;
-  color: #6b6558;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -36,33 +36,34 @@
 }
 
 .about__card {
-  background: #fff;
-  border: 1px solid #ece6d8;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
   border-radius: 12px;
   padding: 22px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .about__card h3 {
   font-family: "Fraunces", serif;
-  color: #1b2a41;
+  color: var(--navy);
   margin: 0 0 8px;
   font-size: 18px;
 }
 
 .about__card p {
-  color: #6b6558;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.5;
   margin: 0;
 }
 
 .about__footer {
-  color: #6b6558;
+  color: var(--muted);
   font-size: 15px;
 }
 
 .about__footer a {
-  color: #c9a227;
+  color: var(--gold);
   font-weight: 600;
   text-decoration: none;
 }

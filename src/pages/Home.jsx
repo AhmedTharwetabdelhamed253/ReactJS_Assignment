@@ -1,9 +1,16 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header";
 import CategoryFilter from "../components/CategoryFilter";
 import BookList from "../components/BookList";
 import CartDrawer from "../components/CartDrawer";
-import useCart from "../hooks/useCart";
+import {
+  addToCart,
+  removeFromCart,
+  selectCartItems,
+  selectCartCount,
+  selectCartTotal,
+} from "../redux/slices/cartSlice";
 import books from "../data/books";
 
 function Home() {
@@ -13,8 +20,12 @@ function Home() {
   // Built-in Hook (useState): tracks whether the cart drawer is open
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Custom Hook: all cart logic (add/remove/totals) lives in one reusable place
-  const { items, addToCart, removeFromCart, cartCount, cartTotal } = useCart();
+  // Redux: useDispatch sends actions to the store, useSelector reads state from it.
+  // The cart itself now lives entirely in the Redux store, not in local component state.
+  const dispatch = useDispatch();
+  const items = useSelector(selectCartItems);
+  const cartCount = useSelector(selectCartCount);
+  const cartTotal = useSelector(selectCartTotal);
 
   // Build the category list automatically from the data + an "All" option
   const categories = ["All", ...new Set(books.map((book) => book.category))];
@@ -36,8 +47,8 @@ function Home() {
       {/* Props: pass categories, the active category, and the select handler */}
       <CategoryFilter categories={categories} activeCategory={activeCategory} onSelect={setActiveCategory} />
 
-      {/* Props: pass the filtered book list and the "add to cart" handler */}
-      <BookList books={filteredBooks} onAddToCart={addToCart} />
+      {/* Redux: dispatch(addToCart(...)) updates the global cart state */}
+      <BookList books={filteredBooks} onAddToCart={(book) => dispatch(addToCart(book))} />
 
       {/* Styled Components: the whole drawer is styled with styled-components */}
       <CartDrawer
@@ -45,7 +56,7 @@ function Home() {
         items={items}
         total={cartTotal}
         onClose={() => setIsCartOpen(false)}
-        onRemove={removeFromCart}
+        onRemove={(id) => dispatch(removeFromCart(id))}
       />
     </>
   );

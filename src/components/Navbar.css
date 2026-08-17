@@ -1,6 +1,7 @@
 .site-nav {
-  background: #1b2a41;
+  background: var(--navy);
   padding: 14px 24px;
+  transition: background-color 0.2s ease;
 }
 
 .site-nav__inner {
@@ -23,6 +24,7 @@
 
 .site-nav__links {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -42,6 +44,23 @@
 }
 
 .navlink--active {
-  background: #c9a227;
-  color: #1b2a41;
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.theme-toggle {
+  margin-left: 6px;
+  border: 1px solid rgba(250, 247, 240, 0.25);
+  background: transparent;
+  color: #faf7f0;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(250, 247, 240, 0.12);
 }

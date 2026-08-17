@@ -2,8 +2,8 @@
    no risk of clashing with class names in any other component. */
 
 .bookCard {
-  background: #fffdf8;
-  border: 1px solid #ece5d5;
+  background: var(--surface-alt);
+  border: 1px solid var(--surface-border);
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -46,7 +46,7 @@
 }
 
 .badgeBestseller {
-  background: #1b2a41;
+  background: var(--navy);
   color: #fff;
 }
 
@@ -82,12 +82,12 @@
   font-family: "Fraunces", serif;
   font-size: 18px;
   margin: 2px 0;
-  color: #1b2a41;
+  color: var(--navy);
 }
 
 .bookAuthor {
   font-size: 13px;
-  color: #6b6558;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
@@ -100,13 +100,13 @@
 
 .priceOld {
   text-decoration: line-through;
-  color: #a39c8c;
+  color: var(--muted-soft);
   font-size: 13px;
 }
 
 .priceNew {
   font-weight: 700;
-  color: #1b2a41;
+  color: var(--navy);
   font-size: 16px;
 }
 
@@ -120,7 +120,7 @@
 
 .addBtn {
   margin-top: auto;
-  background: #1b2a41;
+  background: var(--navy);
   color: #fff;
   border: none;
   padding: 9px 0;
@@ -132,7 +132,7 @@
 }
 
 .addBtn:hover:not(:disabled) {
-  background: #2b405e;
+  background: var(--navy-hover);
 }
 
 .addBtn:disabled {

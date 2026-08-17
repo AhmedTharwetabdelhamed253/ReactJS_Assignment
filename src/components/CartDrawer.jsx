@@ -19,7 +19,7 @@ const Drawer = styled.aside`
   right: 0;
   height: 100%;
   width: min(360px, 90vw);
-  background: #fffdf8;
+  background: var(--surface);
   box-shadow: -12px 0 30px rgba(27, 42, 65, 0.18);
   transform: translateX(${(props) => (props.$isOpen ? "0" : "100%")});
   transition: transform 0.25s ease;
@@ -33,13 +33,13 @@ const DrawerHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-bottom: 1px solid #ece5d5;
+  border-bottom: 1px solid var(--surface-border);
 `;
 
 const DrawerTitle = styled.h2`
   font-family: "Fraunces", serif;
   font-size: 20px;
-  color: #1b2a41;
+  color: var(--navy);
   margin: 0;
 `;
 
@@ -48,7 +48,7 @@ const CloseButton = styled.button`
   background: transparent;
   font-size: 20px;
   cursor: pointer;
-  color: #6b6558;
+  color: var(--muted);
 `;
 
 const ItemList = styled.ul`
@@ -65,7 +65,7 @@ const Item = styled.li`
   align-items: center;
   gap: 10px;
   padding: 14px 20px;
-  border-bottom: 1px solid #f2ede0;
+  border-bottom: 1px solid var(--surface-border);
 `;
 
 const ItemInfo = styled.div`
@@ -75,18 +75,18 @@ const ItemInfo = styled.div`
 
 const ItemTitle = styled.span`
   font-size: 14px;
-  color: #1b2a41;
+  color: var(--navy);
   font-weight: 600;
 `;
 
 const ItemMeta = styled.span`
   font-size: 12px;
-  color: #6b6558;
+  color: var(--muted);
 `;
 
 const RemoveButton = styled.button`
-  border: 1px solid #ece5d5;
-  background: #fff;
+  border: 1px solid var(--surface-border);
+  background: var(--surface);
   color: #a63446;
   border-radius: 6px;
   padding: 4px 10px;
@@ -102,26 +102,26 @@ const RemoveButton = styled.button`
 const EmptyMessage = styled.p`
   padding: 40px 20px;
   text-align: center;
-  color: #6b6558;
+  color: var(--muted);
   font-size: 14px;
 `;
 
 const DrawerFooter = styled.div`
   padding: 18px 20px 22px;
-  border-top: 1px solid #ece5d5;
+  border-top: 1px solid var(--surface-border);
 `;
 
 const TotalRow = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 700;
-  color: #1b2a41;
+  color: var(--navy);
   margin-bottom: 12px;
 `;
 
 const CheckoutButton = styled.button`
   width: 100%;
-  background: #1b2a41;
+  background: var(--navy);
   color: #fff;
   border: none;
   padding: 11px 0;
@@ -132,7 +132,7 @@ const CheckoutButton = styled.button`
   transition: background 0.15s ease;
 
   &:hover {
-    background: #2b405e;
+    background: var(--navy-hover);
   }
 `;
 

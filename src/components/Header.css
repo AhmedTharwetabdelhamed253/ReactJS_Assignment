@@ -4,7 +4,7 @@
 }
 
 .header__eyebrow {
-  color: #c9a227;
+  color: var(--gold);
   font-weight: 700;
   letter-spacing: 0.12em;
   font-size: 13px;
@@ -15,11 +15,11 @@
 .header__title {
   font-family: "Fraunces", serif;
   font-size: 40px;
-  color: #1b2a41;
+  color: var(--navy);
   margin: 0 0 8px;
 }
 
 .header__subtitle {
-  color: #6b6558;
+  color: var(--muted);
   font-size: 15px;
 }
