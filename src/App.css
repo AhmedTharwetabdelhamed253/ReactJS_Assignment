@@ -1,4 +1,8 @@
 .app {
+  min-height: 100vh;
+}
+
+.app__content {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 24px 60px;

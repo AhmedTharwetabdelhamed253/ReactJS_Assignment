@@ -1,23 +1,27 @@
-.book-card {
+/* CSS Modules: class names here are scoped locally to BookCard.jsx —
+   no risk of clashing with class names in any other component. */
+
+.bookCard {
   background: #fffdf8;
   border: 1px solid #ece5d5;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.book-card:hover {
+.bookCard:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(27, 42, 65, 0.12);
 }
 
-.book-card--out {
+.bookCardOut {
   opacity: 0.85;
 }
 
-.book-cover {
+.bookCover {
   position: relative;
   height: 150px;
   display: flex;
@@ -25,7 +29,7 @@
   justify-content: center;
 }
 
-.book-cover__initial {
+.bookCoverInitial {
   font-family: "Fraunces", serif;
   font-size: 48px;
   color: rgba(255, 255, 255, 0.85);
@@ -41,12 +45,12 @@
   font-weight: 600;
 }
 
-.badge--bestseller {
+.badgeBestseller {
   background: #1b2a41;
   color: #fff;
 }
 
-.out-of-stock-overlay {
+.outOfStockOverlay {
   position: absolute;
   inset: 0;
   background: rgba(27, 27, 27, 0.55);
@@ -58,14 +62,15 @@
   font-weight: 600;
 }
 
-.book-info {
+.bookInfo {
   padding: 14px 16px 18px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 }
 
-.book-category {
+.bookCategory {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -73,39 +78,39 @@
   font-weight: 600;
 }
 
-.book-title {
+.bookTitle {
   font-family: "Fraunces", serif;
   font-size: 18px;
   margin: 2px 0;
   color: #1b2a41;
 }
 
-.book-author {
+.bookAuthor {
   font-size: 13px;
   color: #6b6558;
   margin-bottom: 6px;
 }
 
-.book-price {
+.bookPrice {
   display: flex;
   align-items: baseline;
   gap: 8px;
   margin: 10px 0 12px;
 }
 
-.price-old {
+.priceOld {
   text-decoration: line-through;
   color: #a39c8c;
   font-size: 13px;
 }
 
-.price-new {
+.priceNew {
   font-weight: 700;
   color: #1b2a41;
   font-size: 16px;
 }
 
-.discount-tag {
+.discountTag {
   background: #a63446;
   color: #fff;
   font-size: 11px;
@@ -113,7 +118,8 @@
   border-radius: 4px;
 }
 
-.add-btn {
+.addBtn {
+  margin-top: auto;
   background: #1b2a41;
   color: #fff;
   border: none;
@@ -125,11 +131,11 @@
   transition: background 0.15s ease;
 }
 
-.add-btn:hover:not(:disabled) {
+.addBtn:hover:not(:disabled) {
   background: #2b405e;
 }
 
-.add-btn:disabled {
+.addBtn:disabled {
   background: #d8d2c4;
   cursor: not-allowed;
   color: #7a7565;

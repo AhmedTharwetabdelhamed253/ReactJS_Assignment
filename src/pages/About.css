@@ -1,0 +1,72 @@
+.about {
+  text-align: center;
+  padding: 50px 20px 30px;
+}
+
+.about__eyebrow {
+  color: #c9a227;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.about__title {
+  font-family: "Fraunces", serif;
+  font-size: 36px;
+  color: #1b2a41;
+  margin: 0 0 16px;
+}
+
+.about__lead {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  color: #6b6558;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.about__card {
+  background: #fff;
+  border: 1px solid #ece6d8;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.about__card h3 {
+  font-family: "Fraunces", serif;
+  color: #1b2a41;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.about__card p {
+  color: #6b6558;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about__footer {
+  color: #6b6558;
+  font-size: 15px;
+}
+
+.about__footer a {
+  color: #c9a227;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about__footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,116 @@
+.contact {
+  padding: 50px 20px 60px;
+}
+
+.contact__eyebrow {
+  color: #c9a227;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.contact__title {
+  font-family: "Fraunces", serif;
+  font-size: 36px;
+  color: #1b2a41;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.contact__lead {
+  color: #6b6558;
+  font-size: 15px;
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 30px;
+}
+
+.contact__success {
+  background: #e7f5e6;
+  border: 1px solid #a9d8a4;
+  color: #2c6b27;
+  padding: 14px 18px;
+  border-radius: 10px;
+  max-width: 640px;
+  margin: 0 auto 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact__form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  background: #fff;
+  border: 1px solid #ece6d8;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field--full {
+  grid-column: 1 / -1;
+}
+
+.contact__field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1b2a41;
+}
+
+.contact__field input,
+.contact__field textarea {
+  border: 1px solid #d8d2c2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  background: #faf7f0;
+  resize: vertical;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: #c9a227;
+  background: #fff;
+}
+
+.contact__error {
+  color: #c0392b;
+  font-size: 12px;
+}
+
+.contact__submit {
+  grid-column: 1 / -1;
+  background: #1b2a41;
+  color: #faf7f0;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact__submit:hover {
+  background: #29405f;
+}
+
+@media (max-width: 560px) {
+  .contact__form {
+    grid-template-columns: 1fr;
+  }
+}

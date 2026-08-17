@@ -1,30 +1,27 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import CategoryFilter from "./components/CategoryFilter";
-import BookList from "./components/BookList";
-import books from "./data/books";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  // Build the category list automatically from the data + an "All" option
-  const categories = ["All", ...new Set(books.map((book) => book.category))];
-
-  // Ternary Operator: filter the books by the active category
-  const filteredBooks =
-    activeCategory === "All" ? books : books.filter((book) => book.category === activeCategory);
-
   return (
     <div className="app">
-      {/* Props: pass the title and subtitle down to Header */}
-      <Header title="Fourth Season Books" subtitle="Handpicked titles for every kind of reader" />
+      {/* Navigation Bar: visible on every page, highlights the active route */}
+      <Navbar />
 
-      {/* Props: pass categories, the active category, and the select handler */}
-      <CategoryFilter categories={categories} activeCategory={activeCategory} onSelect={setActiveCategory} />
-
-      {/* Props: pass the filtered book list */}
-      <BookList books={filteredBooks} />
+      <div className="app__content container">
+        {/* React Router DOM: Routes/Route map URLs to page components */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* Catch-all route for unknown URLs */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,5 @@
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
+/* Bootstrap's row/col grid now handles layout — this file only keeps
+   the store-specific empty-state styling (CSS Stylesheet approach). */
 
 .empty-state {
   text-align: center;

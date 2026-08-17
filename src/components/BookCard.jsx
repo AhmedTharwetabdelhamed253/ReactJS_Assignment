@@ -1,46 +1,53 @@
 import StarRating from "./StarRating";
-import "./BookCard.css";
+// CSS Modules: classes are imported as a scoped object instead of global class names
+import styles from "./BookCard.module.css";
 
-// Reusable Component — receives book data via Props
-function BookCard({ book }) {
+// Reusable Component — receives book data and the add-to-cart handler via Props
+function BookCard({ book, onAddToCart }) {
   const { title, author, category, price, discount, rating, inStock, bestseller, color } = book;
 
   // Ternary Operator: calculate discounted price if a discount exists
   const finalPrice = discount > 0 ? price - (price * discount) / 100 : price;
 
+  const handleAddToCart = () => {
+    onAddToCart({ id: book.id, title, price, finalPrice });
+  };
+
   return (
-    <article className={`book-card ${!inStock ? "book-card--out" : ""}`}>
-      <div className="book-cover" style={{ backgroundColor: color }}>
-        <span className="book-cover__initial">{title.charAt(0)}</span>
+    <article className={`${styles.bookCard} ${!inStock ? styles.bookCardOut : ""}`}>
+      {/* Inline Styling: each book's cover color comes from data, so it has to be inline */}
+      <div className={styles.bookCover} style={{ backgroundColor: color }}>
+        <span className={styles.bookCoverInitial}>{title.charAt(0)}</span>
 
         {/* && Operator: "Bestseller" badge only shows when true */}
-        {bestseller && <span className="badge badge--bestseller">Bestseller</span>}
+        {bestseller && <span className={`${styles.badge} ${styles.badgeBestseller}`}>Bestseller</span>}
 
         {/* && Operator: "Out of stock" overlay only shows when the book is unavailable */}
-        {!inStock && <div className="out-of-stock-overlay">Out of stock</div>}
+        {!inStock && <div className={styles.outOfStockOverlay}>Out of stock</div>}
       </div>
 
-      <div className="book-info">
-        <span className="book-category">{category}</span>
-        <h3 className="book-title">{title}</h3>
-        <p className="book-author">{author}</p>
+      <div className={styles.bookInfo}>
+        <span className={styles.bookCategory}>{category}</span>
+        <h3 className={styles.bookTitle}>{title}</h3>
+        <p className={styles.bookAuthor}>{author}</p>
 
         <StarRating rating={rating} />
 
-        <div className="book-price">
+        <div className={styles.bookPrice}>
           {/* Ternary Operator: show the old crossed-out price only when there's a discount */}
           {discount > 0 ? (
             <>
-              <span className="price-old">${price}</span>
-              <span className="price-new">${finalPrice}</span>
-              <span className="discount-tag">-{discount}%</span>
+              <span className={styles.priceOld}>${price}</span>
+              <span className={styles.priceNew}>${finalPrice}</span>
+              <span className={styles.discountTag}>-{discount}%</span>
             </>
           ) : (
-            <span className="price-new">${price}</span>
+            <span className={styles.priceNew}>${price}</span>
           )}
         </div>
 
-        <button className="add-btn" disabled={!inStock}>
+        {/* Bootstrap "btn" utility combined with the module's own "add-btn" look */}
+        <button className={`btn ${styles.addBtn}`} disabled={!inStock} onClick={handleAddToCart}>
           {/* Ternary Operator: button text depends on stock availability */}
           {inStock ? "Add to Cart" : "Unavailable"}
         </button>

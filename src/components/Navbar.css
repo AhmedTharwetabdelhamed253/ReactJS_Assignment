@@ -1,0 +1,47 @@
+.site-nav {
+  background: #1b2a41;
+  padding: 14px 24px;
+}
+
+.site-nav__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-nav__brand {
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #faf7f0;
+  text-decoration: none;
+}
+
+.site-nav__links {
+  display: flex;
+  gap: 8px;
+}
+
+.navlink {
+  color: #cfd6e0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navlink:hover {
+  background: rgba(250, 247, 240, 0.1);
+  color: #faf7f0;
+}
+
+.navlink--active {
+  background: #c9a227;
+  color: #1b2a41;
+}
