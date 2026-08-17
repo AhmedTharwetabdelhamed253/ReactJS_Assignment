@@ -1,0 +1,28 @@
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.chip {
+  border: 1px solid #ece5d5;
+  background: #fffdf8;
+  color: #1b2a41;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  border-color: #c9a227;
+}
+
+.chip--active {
+  background: #1b2a41;
+  color: #fff;
+  border-color: #1b2a41;
+}
